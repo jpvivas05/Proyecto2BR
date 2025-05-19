@@ -95,6 +95,8 @@ if (cambio == LOW){
     digitalWrite(l3, LOW);
     digitalWrite(l4, LOW);
     pose(0, 90, 45, 15);
+    Serial.print("Ángulos de posición:");
+    Serial.println(r1, r2, r3, r4);
     tipo();
     if (regreso == HIGH){
       donomar = 3;
@@ -111,6 +113,8 @@ if (cambio == LOW){
     digitalWrite(l3, LOW);
     digitalWrite(l4, LOW);
     pose(15, 90, 0, 45);
+    Serial.print("Ángulos de posición:");
+    Serial.println(r1, r2, r3, r4);
     tipo();
     if (regreso == HIGH){
       donomar = 0;
@@ -143,6 +147,8 @@ if (cambio == LOW){
     digitalWrite(l3, HIGH);
     digitalWrite(l4, HIGH);
     pose(45, 15, 90, 0);
+    Serial.print("Ángulos de posición:");
+    Serial.println(r1, r2, r3, r4);
     tipo();
     if (regreso == HIGH){
       donomar = 2;
@@ -174,6 +180,8 @@ t1.write(val1);
 t2.write(val2);
 t3.write(val3);
 t4.write(val4);
+Serial.print("Ángulos de posición:");
+Serial.println(val1, val2, val3, val4);
 if (cambio == HIGH){
   contador=0;
 }
