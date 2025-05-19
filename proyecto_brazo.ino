@@ -33,8 +33,6 @@ long val1;
 long val2;
 long val3;
 long val4;
-const long intervalo = 1000; //Periodo de reinicio en función millis
-unsigned long preMill = 0; //Variable para el contador en función millis
 void pose(int r1, int r2, int r3, int r4){
     t1.write(r1);
     t2.write(r2);
@@ -100,11 +98,11 @@ if (cambio == LOW){
     tipo();
     if (regreso == HIGH){
       donomar = 3;
-      delay(50);
+      delay(500);
     }
     if (adelante == HIGH){
       donomar = 1;
-      delay(50);
+      delay(500);
     }
     break;
     case 1:
@@ -116,11 +114,11 @@ if (cambio == LOW){
     tipo();
     if (regreso == HIGH){
       donomar = 0;
-      delay(50);
+      delay(500);
     }
     if (adelante == HIGH){
       donomar = 2;
-      delay(50);
+      delay(500);
     }
     break;
     case 2:
@@ -132,11 +130,11 @@ if (cambio == LOW){
     tipo();
     if (regreso == HIGH){
       donomar = 1;
-      delay(50);
+      delay(500);
     }
     if (adelante == HIGH){
       donomar = 3;
-      delay(50);
+      delay(500);
     }
     break;
     case 3:
@@ -148,11 +146,11 @@ if (cambio == LOW){
     tipo();
     if (regreso == HIGH){
       donomar = 2;
-      delay(50);
+      delay(500);
     }
     if (adelante == HIGH){
       donomar = 0;
-      delay(50);
+      delay(500);
     }
     break;
   }
@@ -183,13 +181,6 @@ else if (cambio ==LOW){
   contador=1;
 }
 break;
-}
-//Función millis únicamente cuenta el tiempo
-unsigned long currentMill = millis();
-  //Definición del contador; si el tiempo de conteo sobrepasa el periodo definido, se reinicia el conteo
-if (currentMill - preMill >= intervalo){
-  estadoActual = estadoFuturo;
-  preMill = currentMill;
 }
 delay(1);
 }
